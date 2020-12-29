@@ -29,36 +29,7 @@ def webhook():
     return r
 
 def processRequest(req):
-     #sessionID=req.get('responseId')
-    result = req.get("queryResult")
-    #user_says=result.get("queryText")
-    #log.write_log(sessionID, "User Says: "+user_says)
-    parameters = result.get("parameters")
-    Petal_length=parameters.get("number")
-    Petal_width = parameters.get("number1")
-    Sepal_length=parameters.get("number2")
-    Sepal_width=parameters.get("number3")
-    int_features = [Petal_length,Petal_width,Sepal_length,Sepal_width]
     
-    final_features = [np.array(int_features)]
-	 
-    intent = result.get("intent").get('displayName')
-    
-    if (intent=='irisdata'):
-        prediction = model.predict(final_features)
-    
-        output = round(prediction[0], 2)
-    
-    	
-        if(output==0):
-            flowr = 'Setosa'
-    
-        if(output==1):
-            flowr = 'Versicolour'
-        
-        if(output==2):
-            flowr = 'Virginica'
-	
 	fulfillmentText= "The Iris type seems to be.test."
 	
         #fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
