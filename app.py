@@ -31,10 +31,7 @@ def webhook():
 def processRequest(req):
     
     fulfillmentText= "The Iris type seems to be.test."
-	
-        #fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
-        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return {
+    return {
             "fulfillmentText": fulfillmentText
         }
 	       
