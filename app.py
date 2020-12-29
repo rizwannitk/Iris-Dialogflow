@@ -59,9 +59,9 @@ def processRequest(req):
         if(output==2):
             flowr = 'Virginica'
        
-        fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
-    #fulfillmentText= "The Iris type seems to be!"
-    return {
+      fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
+        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        return {
             "fulfillmentText": fulfillmentText
         }
 if __name__ == '__main__':
