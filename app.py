@@ -29,6 +29,16 @@ def webhook():
     return r
 
 def processRequest(req):
+	
+    result = req.get("queryResult")
+    #user_says=result.get("queryText")
+    #log.write_log(sessionID, "User Says: "+user_says)
+    parameters = result.get("parameters")
+    Petal_length=parameters.get("number")
+    Petal_width = parameters.get("number1")
+    Sepal_length=parameters.get("number2")
+    Sepal_width=parameters.get("number3")
+    int_features = [Petal_length,Petal_width,Sepal_length,Sepal_width]
     
     fulfillmentText= "The Iris type seems to be.test."
     return {
