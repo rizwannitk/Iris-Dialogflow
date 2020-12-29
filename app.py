@@ -5,7 +5,7 @@ import pickle
 from flask_cors import cross_origin
 
 app = Flask(__name__)
-model = pickle.load(open('rf.pkl', 'rb'))
+#model = pickle.load(open('rf.pkl', 'rb'))
 
 @app.route('/')
 def hello():
