@@ -60,7 +60,7 @@ def processRequest(req):
             flowr = 'Virginica'
        
         fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
-    fulfillmentText= "The Iris type seems to be!"
+    #fulfillmentText= "The Iris type seems to be!"
     return {
             "fulfillmentText": fulfillmentText
         }
