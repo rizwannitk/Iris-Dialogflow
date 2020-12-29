@@ -29,7 +29,10 @@ def webhook():
     return r
 
 def processRequest(req):
-    fulfillmentText= "The Iris type seems to be..  {} !"
+    fulfillmentText= "The Iris type seems to be!"
+    return {
+            "fulfillmentText": fulfillmentText
+        }
 if __name__ == '__main__':
     app.run()
 #if __name__ == '__main__':
