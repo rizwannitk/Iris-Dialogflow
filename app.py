@@ -40,8 +40,28 @@ def processRequest(req):
     Sepal_width=parameters.get("number3")
     int_features = [Petal_length,Petal_width,Sepal_length,Sepal_width]
     
-    fulfillmentText= "The Iris type seems to be.test."
-    return {
+    final_features = [np.array(int_features)]
+	 
+    intent = result.get("intent").get('displayName')
+    
+    if (intent=='irisdata'):
+        prediction = model.predict(final_features)
+    
+        output = round(prediction[0], 2)
+    
+    	
+        if(output==0):
+            flowr = 'Setosa'
+    
+        if(output==1):
+            flowr = 'Versicolour'
+        
+        if(output==2):
+            flowr = 'Virginica'
+       
+        fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
+        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        return {
             "fulfillmentText": fulfillmentText
         }
 	       
