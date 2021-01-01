@@ -31,6 +31,16 @@ def webhook():
 def processRequest(req):
 	
     result = req.get("queryResult")
+
+    intent = result.get("intent").get('displayName')
+    
+    if (intent=='final'):
+        fulfillmentText= "The is working"
+        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        return {
+            "fulfillmentText": fulfillmentText
+        }
+		
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
