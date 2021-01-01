@@ -43,8 +43,33 @@ def processRequest(req):
 	#log.write_log(sessionID, "Bot Says: "+intent)
     
     if (intent=='final'):
-	   	Owner = result.get("outputContexts")[1].get("parameters").get("owner")
+	   	Owner = int(result.get("outputContexts")[1].get("parameters").get("owner"))
 	   	dealer= str(result.get("outputContexts")[1].get("parameters").get("dealer"))
+	   	modelyear= int(result.get("outputContexts")[1].get("parameters").get("modelyear"))
+	   	no_year=2020-modelyear
+	   	Present_Price= float(result.get("outputContexts")[1].get("parameters").get("price"))
+	   	Kms_Driven= float(result.get("outputContexts")[1].get("parameters").get("kilometer"))
+	   	fueltype= str(result.get("outputContexts")[1].get("parameters").get("fueltype"))
+	   	transmission= str(result.get("outputContexts")[1].get("parameters").get("transmission"))
+	  
+	   	if (fueltype=="Petrol"):
+	   	    Fuel_Type_Petrol=1;
+	   	    Fuel_Type_Diesel=0;
+	   	else :
+	   	    if (fueltype=="Desiel"):
+	   	        Fuel_Type_Petrol=0;
+	   	        Fuel_Type_Diesel=1;
+	   	    else :
+	   	        Fuel_Type_Petrol=0;
+	   	        Fuel_Type_Diesel=0;
+	   	if (dealer=="Individual") :
+	   	    Seller_Type_Individual=1;
+	   	else :
+	   	    Seller_Type_Individual=0;
+	   	if (transmission=="Individual") :
+	   	    Transmission_Manual=1;
+	   	else :
+	   	    Transmission_Manual=0;
 	   	print ('owner is ' + str(Owner) )
 	   	
 	   	fulfillmentText= "The Iris type seems to be..   !"
