@@ -11,7 +11,7 @@ model = pickle.load(open('rf.pkl', 'rb'))
 
 @app.route('/')
 def hello():
-    app.logger.info('Info')
+    app.logger.info('this is logging appplication')
     return 'Hello World'
 
 @app.route('/webhook', methods=['POST'])
