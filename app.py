@@ -43,10 +43,13 @@ def processRequest(req):
     
     if (intent=='final'):
 	
+	outputContexts = result.get("outputContexts[0]")	
 	#parameters = result.get("queryResult").get(outputContexts[0])
-	
+	print('inside final')
+	print(outputContexts)
         fulfillmentText= "The is working"
-        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        #log.write_log(se
+	ssionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
         }
