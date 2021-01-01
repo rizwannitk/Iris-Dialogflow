@@ -30,10 +30,17 @@ def webhook():
 
 def processRequest(req):
    
-    fulfillmentText= "The is working"
-    return {
+    try:
+      fulfillmentText= "The is working"
+        return {
             "fulfillmentText": fulfillmentText
-        }    
+        } 
+    except:
+      fulfillmentText= "The is not working"
+        return {
+            "fulfillmentText": fulfillmentText
+        }
+    
 
 if __name__ == '__main__':
     app.run()
