@@ -43,34 +43,34 @@ def processRequest(req):
 	#log.write_log(sessionID, "Bot Says: "+intent)
     
     if (intent=='final'):
-	   	Owner = result.get("outputContexts")[1].get("parameters").get("owner")
-	   	dealer= result.get("outputContexts")[1].get("parameters").get("dealer")
-	   	modelyear= result.get("outputContexts")[1].get("parameters").get("modelyear")
-	   	no_year=2020-int(modelyear[0])
-	   	Present_Price= result.get("outputContexts")[1].get("parameters").get("price")
-	   	Kms_Driven= result.get("outputContexts")[1].get("parameters").get("kilometer")
-	   	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
-	   	transmission= result.get("outputContexts")[1].get("parameters").get("transmission")
+	   	Owner = result.get("outputContexts")[2].get("parameters").get("owner")
+	   	dealer= result.get("outputContexts")[2].get("parameters").get("dealer")
+	   	modelyear= result.get("outputContexts")[2].get("parameters").get("modelyear")
+	   	no_year=2020-int(modelyear)
+	   	Present_Price= result.get("outputContexts")[2].get("parameters").get("price")
+	   	Kms_Driven= result.get("outputContexts")[2].get("parameters").get("kilometer")
+	   	fueltype= result.get("outputContexts")[2].get("parameters").get("fueltype")
+	   	transmission= result.get("outputContexts")[2].get("parameters").get("transmission")
 	  
-	   	if (fueltype[0]=="Petrol"):
+	   	if (fueltype=="Petrol"):
 	   	    Fuel_Type_Petrol=1;
 	   	    Fuel_Type_Diesel=0;
 	   	else :
-	   	    if (fueltype[0]=="Desiel"):
+	   	    if (fueltype=="Desiel"):
 	   	        Fuel_Type_Petrol=0;
 	   	        Fuel_Type_Diesel=1;
 	   	    else :
 	   	        Fuel_Type_Petrol=0;
 	   	        Fuel_Type_Diesel=0;
-	   	if (dealer[0]=="Individual") :
+	   	if (dealer=="Individual") :
 	   	    Seller_Type_Individual=1;
 	   	else :
 	   	    Seller_Type_Individual=0;
-	   	if (transmission[0]=="Individual") :
+	   	if (transmission=="Individual") :
 	   	    Transmission_Manual=1;
 	   	else :
 	   	    Transmission_Manual=0;
-	   	print ('owner is ' + str(Owner[0]) )
+	   	print ('owner is ' + str(Owner) )
 	   	
 	   	fulfillmentText= "The Iris type seems to be..   !"
 	   	return {
