@@ -30,13 +30,11 @@ def webhook():
 
 def processRequest(req):
    
-    try:
-      fulfillmentText= "The is working"
-        return {
-            "fulfillmentText": fulfillmentText
-        } 
-    except:
-      fulfillmentText= "The is not working"
+    if (intent=='irisdata'):
+       
+       
+        fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
+        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
         }
