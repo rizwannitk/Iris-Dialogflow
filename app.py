@@ -78,6 +78,12 @@ def processRequest(req):
         return {
             "fulfillmentText": fulfillmentText
         }
+    if (intent=='final'):
+        fulfillmentText= "The is working"
+        log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        return {
+            "fulfillmentText": fulfillmentText
+        } 
 	       
 if __name__ == '__main__':
     app.run()
