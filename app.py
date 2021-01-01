@@ -43,23 +43,21 @@ def processRequest(req):
     
     if (intent=='final'):
 	
-	owner = result.get("outputContexts")[1].get("parameters").get("owner")
-	dealer = result.get("outputContexts")[1].get("parameters").get("dealer")
-	modelyear= result.get("outputContexts")[1].get("parameters").get("modelyear")
-	price= result.get("outputContexts")[1].get("parameters").get("price")
-	kilometer= result.get("outputContexts")[1].get("parameters").get("kilometer")
-	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
+    	owner = result.get("outputContexts")[1].get("parameters").get("owner")
+    	dealer = result.get("outputContexts")[1].get("parameters").get("dealer")
+    	modelyear= result.get("outputContexts")[1].get("parameters").get("modelyear")
+    	price= result.get("outputContexts")[1].get("parameters").get("price")
+    	kilometer= result.get("outputContexts")[1].get("parameters").get("kilometer")
+    	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
 	
-	print ('owner is ' + owner )
-	#parameters = result.get("queryResult").get(outputContexts[0])
-	print('inside final')
-	print 
-        fulfillmentText= "The is working"
-        #log.write_log(se
-	ssionID, "Bot Says: "+fulfillmentText)
-        return {
-            "fulfillmentText": fulfillmentText
-        }
+    	print ('owner is ' + owner )
+    	#parameters = result.get("queryResult").get(outputContexts[0])
+    	print('inside final')
+    	fulfillmentText= "The is working"
+            #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+            return {
+                "fulfillmentText": fulfillmentText
+            }
 		
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
