@@ -36,7 +36,7 @@ def processRequest(req):
 
     intent = result.get("intent").get('displayName')
 	
-	log.write_log(sessionID, "Bot Says: "+intent)
+	#log.write_log(sessionID, "Bot Says: "+intent)
     
     if (intent=='final'):
         fulfillmentText= "The is working"
