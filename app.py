@@ -40,7 +40,7 @@ def processRequest(req):
     
     if (intent=='final'):
         fulfillmentText= "The is working"
-        log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
         }
