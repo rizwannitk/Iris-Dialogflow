@@ -30,14 +30,10 @@ def webhook():
 
 def processRequest(req):
    
-    if (intent=='irisdata'):
-       
-       
-        fulfillmentText= "The Iris type seems to be.. "
-        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return {
+    fulfillmentText= "The Iris type seems to be.. "
+    return {
             "fulfillmentText": fulfillmentText
-        }
+           }
     
 
 if __name__ == '__main__':
