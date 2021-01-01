@@ -45,7 +45,7 @@ def processRequest(req):
 	 
     intent = result.get("intent").get('displayName')
     
-    if (intent=='final'):
+    if (intent=='irisdata'):
 	#parameters = result.get("parameters")
         #Petal_length=parameters.get("number")
         #Petal_width = parameters.get("number1")
