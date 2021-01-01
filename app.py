@@ -38,27 +38,22 @@ def processRequest(req):
 	
 	log.write_log(sessionID, "Bot Says: "+intent)
     
-    if (intent=='final'):
-        fulfillmentText= "The is working"
-        log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return {
-            "fulfillmentText": fulfillmentText
-        }
-		
+    	
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
-    parameters = result.get("parameters")
-    Petal_length=parameters.get("number")
-    Petal_width = parameters.get("number1")
-    Sepal_length=parameters.get("number2")
-    Sepal_width=parameters.get("number3")
-    int_features = [Petal_length,Petal_width,Sepal_length,Sepal_width]
     
-    final_features = [np.array(int_features)]
 	 
     intent = result.get("intent").get('displayName')
     
     if (intent=='irisdata'):
+	parameters = result.get("parameters")
+        Petal_length=parameters.get("number")
+        Petal_width = parameters.get("number1")
+        Sepal_length=parameters.get("number2")
+        Sepal_width=parameters.get("number3")
+        int_features = [Petal_length,Petal_width,Sepal_length,Sepal_width]
+    
+        final_features = [np.array(int_features)]
         prediction = model.predict(final_features)
     
         output = round(prediction[0], 2)
@@ -80,7 +75,7 @@ def processRequest(req):
         }
     if (intent=='final'):
         fulfillmentText= "The is working"
-        log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
         } 
