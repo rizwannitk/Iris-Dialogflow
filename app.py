@@ -32,11 +32,15 @@ def processRequest(req):
 	
     result = req.get("queryResult")
 
+    log.write_log(sessionID, "Bot Says: hello ")
+
     intent = result.get("intent").get('displayName')
+	
+	log.write_log(sessionID, "Bot Says: "+intent)
     
     if (intent=="final"):
         fulfillmentText= "The is working"
-        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+        log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
         }
