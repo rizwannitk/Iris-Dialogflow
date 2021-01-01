@@ -44,7 +44,8 @@ def processRequest(req):
     if (intent=='final'):
 	   	Owner = result.get("outputContexts")[1].get("parameters").get("owner")
 	   	dealer= result.get("outputContexts")[1].get("parameters").get("dealer")
-	   	no_year= 2020-result.get("outputContexts")[1].get("parameters").get("modelyear")
+	   	modelyear= result.get("outputContexts")[1].get("parameters").get("modelyear")
+	   	no_year=2020-modelyear
 	   	Present_Price= result.get("outputContexts")[1].get("parameters").get("price")
 	   	Kms_Driven= result.get("outputContexts")[1].get("parameters").get("kilometer")
 	   	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
