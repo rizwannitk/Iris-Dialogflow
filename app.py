@@ -33,7 +33,7 @@ def processRequest(req):
     if (intent=='irisdata'):
        
        
-        fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
+        fulfillmentText= "The Iris type seems to be.. "
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
