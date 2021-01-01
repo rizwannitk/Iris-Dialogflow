@@ -14,6 +14,8 @@ def hello():
 @app.route('/webhook', methods=['POST'])
 @cross_origin()
 def webhook():
+	
+	app.logger.info('inside webhook')
 
     req = request.get_json(silent=True, force=True)
 
