@@ -3,6 +3,7 @@ from flask import Flask, request, make_response
 import json
 import pickle
 import logging
+from logging.handlers import RotatingFileHandler
 from flask_cors import cross_origin
 
 app = Flask(__name__)
@@ -10,6 +11,7 @@ model = pickle.load(open('rf.pkl', 'rb'))
 
 @app.route('/')
 def hello():
+    app.logger.info('Info')
     return 'Hello World'
 
 @app.route('/webhook', methods=['POST'])
@@ -33,7 +35,7 @@ def processRequest(req):
 	
     result = req.get("queryResult")
 
-     app.logger.info('logged in successfully')
+    #app.logger.info('logged in successfully')
 
     intent = result.get("intent").get('displayName')
 	
