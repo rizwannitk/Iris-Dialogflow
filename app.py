@@ -2,6 +2,7 @@ import numpy as np
 from flask import Flask, request, make_response
 import json
 import pickle
+import logger
 from flask_cors import cross_origin
 
 app = Flask(__name__)
@@ -32,13 +33,16 @@ def processRequest(req):
 	
     result = req.get("queryResult")
 
-    #log.write_log(sessionID, "Bot Says: hello ")
+    log.write_log(sessionID, "Bot Says: hello ")
 
     intent = result.get("intent").get('displayName')
 	
 	#log.write_log(sessionID, "Bot Says: "+intent)
     
     if (intent=='final'):
+	
+	parameters = result.get("queryResult").get(outputContexts[0])
+	
         fulfillmentText= "The is working"
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
