@@ -53,7 +53,7 @@ def processRequest(req):
     	print ('owner is ' + owner )
     	#parameters = result.get("queryResult").get(outputContexts[0])
     	print('inside final')
-    	fulfillmentText= "The Iris type seems to be..  {} !".format(flowr)
+    	fulfillmentText= "The is working"
         #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
         return {
             "fulfillmentText": fulfillmentText
