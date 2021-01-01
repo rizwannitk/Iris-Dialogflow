@@ -44,6 +44,7 @@ def processRequest(req):
     
     if (intent=='final'):
 	   	Owner = result.get("outputContexts")[1].get("parameters").get("owner")
+	   	dealer= str(result.get("outputContexts")[1].get("parameters").get("dealer"))
 	   	print ('owner is ' + str(Owner) )
 	   	
 	   	fulfillmentText= "The Iris type seems to be..   !"
