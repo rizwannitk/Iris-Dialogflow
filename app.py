@@ -42,23 +42,20 @@ def processRequest(req):
 	#log.write_log(sessionID, "Bot Says: "+intent)
     
     if (intent=='final'):
-	
-    	owner = result.get("outputContexts")[1].get("parameters").get("owner")
-    	dealer = result.get("outputContexts")[1].get("parameters").get("dealer")
-    	modelyear= result.get("outputContexts")[1].get("parameters").get("modelyear")
-    	price= result.get("outputContexts")[1].get("parameters").get("price")
-    	kilometer= result.get("outputContexts")[1].get("parameters").get("kilometer")
-    	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
-	
-    	print ('owner is ' + owner )
-    	#parameters = result.get("queryResult").get(outputContexts[0])
-    	print('inside final')
-    	fulfillmentText= "The is working"
-        #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
-        return {
+	   	owner = result.get("outputContexts")[1].get("parameters").get("owner")
+	   	dealer= result.get("outputContexts")[1].get("parameters").get("dealer")
+	   	modelyear= result.get("outputContexts")[1].get("parameters").get("modelyear")
+	   	price= result.get("outputContexts")[1].get("parameters").get("price")
+	   	kilometer= result.get("outputContexts")[1].get("parameters").get("kilometer")
+	   	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
+	   	print ('owner is ' + owner )
+	   	fulfillmentText= "The Iris type seems to be..   !"
+	   	return {
             "fulfillmentText": fulfillmentText
         }
-		
+        
+            #log.write_log(sessionID, "Bot Says: "+fulfillmentText)
+                
     #user_says=result.get("queryText")
     #log.write_log(sessionID, "User Says: "+user_says)
     parameters = result.get("parameters")
@@ -99,3 +96,4 @@ if __name__ == '__main__':
 #    port = int(os.getenv('PORT', 5000))
 #    print("Starting app on port %d" % port)
 #    app.run(debug=False, port=port, host='0.0.0.0')
+
