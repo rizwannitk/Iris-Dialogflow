@@ -33,7 +33,7 @@ def processRequest(req):
 	
     result = req.get("queryResult")
 
-    log.write_log(sessionID, "Bot Says: hello ")
+     app.logger.info('logged in successfully')
 
     intent = result.get("intent").get('displayName')
 	
