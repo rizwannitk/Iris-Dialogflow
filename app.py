@@ -43,14 +43,14 @@ def processRequest(req):
 	#log.write_log(sessionID, "Bot Says: "+intent)
     
     if (intent=='final'):
-	   	Owner = int(result.get("outputContexts")[1].get("parameters").get("owner"))
-	   	dealer= str(result.get("outputContexts")[1].get("parameters").get("dealer"))
-	   	modelyear= int(result.get("outputContexts")[1].get("parameters").get("modelyear"))
-	   	no_year=2020-modelyear
-	   	Present_Price= float(result.get("outputContexts")[1].get("parameters").get("price"))
-	   	Kms_Driven= float(result.get("outputContexts")[1].get("parameters").get("kilometer"))
-	   	fueltype= str(result.get("outputContexts")[1].get("parameters").get("fueltype"))
-	   	transmission= str(result.get("outputContexts")[1].get("parameters").get("transmission"))
+	   	Owner = result.get("outputContexts")[1].get("parameters").get("owner")
+	   	dealer= result.get("outputContexts")[1].get("parameters").get("dealer")
+	   	modelyear= result.get("outputContexts")[1].get("parameters").get("modelyear")
+	   	no_year=2020-int(modelyear)
+	   	Present_Price= result.get("outputContexts")[1].get("parameters").get("price")
+	   	Kms_Driven= result.get("outputContexts")[1].get("parameters").get("kilometer")
+	   	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
+	   	transmission= result.get("outputContexts")[1].get("parameters").get("transmission")
 	  
 	   	if (fueltype=="Petrol"):
 	   	    Fuel_Type_Petrol=1;
