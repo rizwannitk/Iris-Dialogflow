@@ -42,12 +42,33 @@ def processRequest(req):
 	#log.write_log(sessionID, "Bot Says: "+intent)
     
     if (intent=='final'):
-	   	owner = result.get("outputContexts")[1].get("parameters").get("owner")
+	   	Owner = result.get("outputContexts")[1].get("parameters").get("owner")
 	   	dealer= result.get("outputContexts")[1].get("parameters").get("dealer")
-	   	modelyear= result.get("outputContexts")[1].get("parameters").get("modelyear")
-	   	price= result.get("outputContexts")[1].get("parameters").get("price")
-	   	kilometer= result.get("outputContexts")[1].get("parameters").get("kilometer")
+	   	no_year= 2020-result.get("outputContexts")[1].get("parameters").get("modelyear")
+	   	Present_Price= result.get("outputContexts")[1].get("parameters").get("price")
+	   	Kms_Driven= result.get("outputContexts")[1].get("parameters").get("kilometer")
 	   	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
+	   	transmission= result.get("outputContexts")[1].get("parameters").get("transmission")
+	  
+	   	if (fueltype=="Petrol"):
+	   	    Fuel_Type_Petrol=1;
+	   	    Fuel_Type_Diesel=0;
+	   	else :
+	   	    if (fueltype=="Desiel"):
+	   	        Fuel_Type_Petrol=0;
+	   	        Fuel_Type_Diesel=1;
+	   	    else :
+	   	        Fuel_Type_Petrol=0;
+	   	        Fuel_Type_Diesel=0;
+	   	if (dealer=="Individual") :
+	   	    Seller_Type_Individual=1;
+	   	else :
+	   	    Seller_Type_Individual=0;
+	   	if (transmission=="Individual") :
+	   	    Transmission_Manual=1;
+	   	else :
+	   	    Transmission_Manual=0;
+	   	
 	   	print ('owner is ' + str(owner) )
 	   	fulfillmentText= "The Iris type seems to be..   !"
 	   	return {
