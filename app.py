@@ -48,7 +48,7 @@ def processRequest(req):
 	   	price= result.get("outputContexts")[1].get("parameters").get("price")
 	   	kilometer= result.get("outputContexts")[1].get("parameters").get("kilometer")
 	   	fueltype= result.get("outputContexts")[1].get("parameters").get("fueltype")
-	   	print ('owner is ' + owner )
+	   	print ('owner is ' + str(owner) )
 	   	fulfillmentText= "The Iris type seems to be..   !"
 	   	return {
             "fulfillmentText": fulfillmentText
